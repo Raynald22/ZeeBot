@@ -17,6 +17,14 @@ module.exports = {
 
         const userJoinedAt = moment(member.joinedAt).format('MM/DD/YYYY - h:mm a')
 
+        // member permissions
+
+
+
+
+
+
+
         if (member.user.presence.status === 'dnd')
             var status = ':no_entry: Do Not Disturb'
         else if (member.user.presence.status === 'idle')
@@ -27,6 +35,9 @@ module.exports = {
             var status = ':green_circle: Online'
         else if (member.user.presence.status === 'streaming')
             var status = 'Streaming'
+
+        // show user presence type and name
+
 
 
         const embed = new MessageEmbed()
@@ -40,10 +51,14 @@ module.exports = {
             .addField('HIghest Role', member.roles.highest)
             .addField('Roles owned', member.roles.cache.map(r => `${r}`).join(', '))
             .addField('Status', status)
-            // .addField('Activity', member.user.presence.activities.map(a => `${a.name}`).join(', '))
+            // show activity type and name, if null or undefined, show nothing
+            .addField('Activity', member.user.presence.activities.length > 0 ? `${member.user.presence.activities[0].type} - ${member.user.presence.activities[0].name}` : 'Tidak ada')
+
             .addField('Created At', userCreatedAt)
-            .addField('Joined to this channel at', userJoinedAt)
-            .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
+            .addField('Joined to this server at', userJoinedAt)
+            //show member permissions without any "_" and capitalized
+            .addField('Permissions', member.permissions.toArray().map(p => p.replace(/_/g, ' ').replace(/\w\S*/g, (txt) => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); })).join(' | '))
+            .setFooter(`Requested by ${message.author.tag}`, message.author.avatarURL())
             .setTimestamp();
 
         return message.lineReply(embed).catch(err => console.error(err));

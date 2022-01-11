@@ -1,12 +1,10 @@
-const { MessageEmbed } = require("discord.js");
-
-const malScraper = require('mal-scraper');
-const config = require("../../config.js");
+const { MessageEmbed } = require('discord.js');
+const request = require('node-superfetch');
 
 module.export = {
     name: 'genshin',
-    description: 'Cari data tentang genshin',
     category: 'wibu',
+    description: 'Cari data tentang genshin',
     usage: 'genshin <nama character>',
 
 
