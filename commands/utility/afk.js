@@ -3,12 +3,12 @@ const config = require('../../config.js')
 const schema = require('../../models/afk-schema')
 
 module.exports = {
-    name: 'afk',
-    category: 'utility',
-    aliases: [],
-    description: 'Away from keyboard',
-    usage: `afk [reason]`,
-    run: async (client, message, args) => {
+  name: 'afk',
+  category: 'utility',
+  aliases: [],
+  description: 'Away from keyboard',
+  usage: `afk [reason]`,
+  run: async (client, message, args) => {
 
     let data;
     try {
@@ -26,7 +26,22 @@ module.exports = {
       console.log(e)
     }
 
-    message.lineReply(`Beralih ke mode afk...`)
+    // reply message with reason
+    if (args.length > 0) {
+      data.reason = args.join(' ')
+      data.save()
+      //delete message after 2 seconds
+      setTimeout(() => {
+        message.delete()
+      }, 2000)
+      return message.channel.send(`${message.author} sekarang afk karena ${data.reason}`)
+
+    } else {
+      data.reason = 'No reason provided'
+      data.save()
+      message.reply(`lu afk karena **gaada**`)
+    }
+
     data.AFK = true
     data.AFK_Reason = args.join(" ")
     await data.save()

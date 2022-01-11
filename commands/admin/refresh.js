@@ -11,8 +11,8 @@ module.exports = {
     usage: `refresh <category> <command>`,
     run: async (client, message, args) => {
 
-        if (message.author.id !== "325260673015873548" && message.author.id != "423453260289015808") {
-            return message.channel.send("Kamu tidak mempunyai wewenang atas perintah ini. Silahkan hubungi <@!325260673015873548> atau <@!325260673015873548> .");
+        if (message.author.id !== "325260673015873548" && message.author.id != "415466692064313344") {
+            return message.channel.send("Kamu tidak mempunyai wewenang atas perintah ini. Silahkan hubungi <@!415466692064313344> atau <@!325260673015873548> .");
         }
 
         if (!args[0]) return message.reply(`${config.PREFIX}refresh <category> <command>`)

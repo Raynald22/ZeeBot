@@ -1,4 +1,5 @@
 const { Client, Collection } = require('discord.js');
+const keep_alive = require('./keep_alive.js')
 const config = require('./config.js');
 const colors = require("colors");
 const fs = require('fs');
@@ -17,7 +18,7 @@ const port = 3000
 app.get('/', (req, res) => res.send('UDH ON BOS!'))
 
 app.listen(port, () =>
-console.log(`Logging in...`)
+  console.log(`Logging in...`)
 );
 
 const AFKS = require('./models/afk-schema');
@@ -38,21 +39,21 @@ client.categories = fs.readdirSync('./commands/');
 // });
 
 ['command'].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
+  require(`./handlers/${handler}`)(client);
 });
 
 fs.readdir('./events/', (err, files) => {
-    if (err) return console.error;
-    files.forEach(file => {
-        if (!file.endsWith('.js')) return;
-        const evt = require(`./events/${file}`);
-        let evtName = file.split('.')[0];
-        //console.log(`Loaded event '${evtName}'`);
-        client.on(evtName, evt.bind(null, client));
-    });
+  if (err) return console.error;
+  files.forEach(file => {
+    if (!file.endsWith('.js')) return;
+    const evt = require(`./events/${file}`);
+    let evtName = file.split('.')[0];
+    //console.log(`Loaded event '${evtName}'`);
+    client.on(evtName, evt.bind(null, client));
+  });
 });
 
-client.on('message', async(message) => {
+client.on('message', async (message) => {
   if (!message.guild || message.author.bot) return;
 
   var system1 = false
@@ -108,5 +109,6 @@ client.on('message', async(message) => {
 
 });
 
+keep_alive();
 client.mongoose.init();
 client.login(config.TOKEN);

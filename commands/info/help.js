@@ -27,7 +27,7 @@ module.exports = {
       .setThumbnail(client.user.displayAvatarURL())
       .setColor("#B1B1B1")
       .setTitle('ZeeBot • Help')
-      .setDescription(`__**Admin Bot**__:\n\`Refresh\`\n :wrench: __**Moderation**__: \n\`Ban, Changenick, Hidechannel, Kick, Modlog, Mutechannel, Prefix, Unhidechannel, Unmutechannel\`\n_:moneybag:  _**Economy**__: \n\`Addsaldo, Balance, Beg, Bet, Buy, Daily, Deletesaldo, Deposit, Monthly, Sell, Shop, Transfer, Weekly, Withdraw, Work\`\n:gear: __**Utility**__: \n\`Afk, Avatar, Charcount, Colorinfo, Emojiinfo, Gif, Image-size, Joox, Kbbi, Lol-champion, Read-qr, Rightstufanime, Spotify, Steamgame, Translate, Weather, Whattext, Wikipedia-en, Wikipedia-id\`\n__**Wibu**__: \n\`Animesearch, Randomwaifu, Whatanime\``)
+      .setDescription(`__**Admin Bot**__:\n\`Refresh\`\n :wrench: __**Moderation**__: \n\`Ban, DM, Changenick, Hidechannel, Kick, Modlog, Mutechannel, Prefix, Unhidechannel, Unmutechannel\`\n_:moneybag:  _**Economy**__: \n\`Addsaldo, Balance, Beg, Bet, Buy, Daily, Deletesaldo, Deposit, Monthly, Sell, Shop, Transfer, Weekly, Withdraw, Work\`\n:gear: __**Utility**__: \n\`Afk, Avatar, Charcount, Colorinfo, Emojiinfo, Gif, Image-size, Joox, Kbbi, Lol-champion, Read-qr, Rightstufanime, Spotify, Steamgame, Translate, Weather, Whattext, Wikipedia-en, Wikipedia-id\`\n__**Wibu**__: \n\`Animesearch, Randomwaifu, Whatanime\``)
       .addField('Server Link | DM', '[__**Invite Link**__](https://discord.com/api/oauth2/authorize?client_id=928857345851805848&permissions=8&scope=bot) | [<@!325260673015873548>]()')
       .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
       .setTimestamp();

@@ -47,6 +47,24 @@ module.exports = async (client, message) => {
         })
     }
 
+    if (message.content.startsWith('mia') || message.content.startsWith('Mia')) {
+        message.lineReply('udh mndi lom l..?')
+    }
+
+    if (message.content.startsWith('rey') || message.content.startsWith('Rey')) {
+        message.lineReply('krn')
+    }
+
+    if (message.content.startsWith('pmn') || message.content.startsWith('Pmn')) {
+        message.lineReply('krn')
+    }
+
+    if (message.content.startsWith('vella') || message.content.startsWith('Vella')) {
+        message.lineReply('jmt')
+    }
+
+
+
     if (!message.guild) return;
     if (!message.content.startsWith(prefix)) return;
 
