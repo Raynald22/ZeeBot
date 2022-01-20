@@ -11,16 +11,6 @@ const client = new Client({
   }
 });
 
-const express = require('express')
-const app = express();
-const port = 3000
-
-app.get('/', (req, res) => res.send('UDH ON BOS!'))
-
-app.listen(port, () =>
-  console.log(`Logging in...`)
-);
-
 const AFKS = require('./models/afk-schema');
 const CurrencySystem = require('currency-system');
 const cs = new CurrencySystem;

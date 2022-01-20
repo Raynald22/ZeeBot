@@ -51,19 +51,33 @@ module.exports = async (client, message) => {
         message.lineReply('udh mndi lom l..?')
     }
 
-    if (message.content.startsWith('rey') || message.content.startsWith('Rey')) {
+    const rey = [
+        'rey',
+        'Rey',
+        'pmn',
+        'Pmn',
+        'paman',
+        'Paman',
+        'kuki',
+        'Kuki',
+    ]
+
+    const vella = [
+        'vella',
+        'Vella',
+        'mine',
+        'Mine',
+        'vza',
+        'Vza',
+    ]
+
+    if (rey.some(word => message.content.includes(word))) {
         message.lineReply('krn')
     }
 
-    if (message.content.startsWith('pmn') || message.content.startsWith('Pmn')) {
-        message.lineReply('krn')
-    }
-
-    if (message.content.startsWith('vella') || message.content.startsWith('Vella')) {
+    if (vella.some(word => message.content.includes(word))) {
         message.lineReply('jmt')
     }
-
-
 
     if (!message.guild) return;
     if (!message.content.startsWith(prefix)) return;

@@ -52,7 +52,7 @@ module.exports = {
       .addField('\u200b', '\u200b')
       .addField(':hearts: __**Wibu**__:', `\`Animesearch\`: Search anime\n \`Randomwaifu\`: Generate random waifu\n \`Whatanime\`: Anime tracer`)
       .addField('\u200b', '\u200b')
-      .addField('__**Genshin**__', `\`Genshin\`: Show characters information`)
+      .addField('__**Genshin**__', `\`Genshin\`: Show List of characters\n \`Gcharacter\`: Show character information\n \`Gweapon\`: Show weapon information\n \`Gelement\`: Show elemet information\n \`Genemy\`: Show enemy information\n \`Gdomain\`: Show domain information\n \`Gartifact\`: Show artifacts information\n \`Gnation\`: Show nations information`)
       .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
       .setTimestamp();
 
@@ -67,7 +67,7 @@ module.exports = {
       .addField('\u200b', '\u200b')
       .addField(':hearts:  __**Wibu**__:', `\`Animesearch\`: Search anime\n \`Randomwaifu\`: Generate random waifu\n \`Whatanime\`: Anime tracer`)
       .addField('\u200b', '\u200b')
-      .addField('__**Genshin**__', `\`Genshin\`: Show characters information`)
+      .addField('__**Genshin**__', `\`Genshin\`: Show List of characters\n \`Gcharacter\`: Show character information\n \`Gweapon\`: Show weapon information\n \`Gelement\`: Show elemet information\n \`Genemy\`: Show enemy information\n \`Gdomain\`: Show domain information\n \`Gartifact\`: Show artifacts information\n \`Gnation\`: Show nations information`)
       .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
       .setTimestamp();
 
@@ -80,7 +80,7 @@ module.exports = {
       .addField('\u200b', '\u200b')
       .addField(':hearts: __**Wibu**__:', `\`Animesearch\`: Search anime\n \`Randomwaifu\`: Generate random waifu\n \`Whatanime\`: Anime tracer`)
       .addField('\u200b', '\u200b')
-      .addField('__**Genshin**__', `\`Genshin\`: Show characters information`)
+      .addField('__**Genshin**__', `\`Genshin\`: Show List of characters\n \`Gcharacter\`: Show character information\n \`Gweapon\`: Show weapon information\n \`Gelement\`: Show elemet information\n \`Genemy\`: Show enemy information\n \`Gdomain\`: Show domain information\n \`Gartifact\`: Show artifacts information\n \`Gnation\`: Show nations information`)
       .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
       .setTimestamp();
 
@@ -89,10 +89,13 @@ module.exports = {
 
     if (message.author.id === '325260673015873548' || message.author.id === '423453260289015808') {
       dm.send(ADMINBOT);
+      message.channel.send('I have sent you a DM with all the commands!');
     } else if (message.member.hasPermission('ADMINISTRATOR')) {
       dm.send(ADMINSERVER)
+      message.channel.send('I have sent you a DM with all the commands!');
     } else {
       dm.send(NonADMIN)
+      message.channel.send('I have sent you a DM with all the commands!');
     }
 
   }
